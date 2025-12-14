@@ -24,7 +24,3 @@ func add_log_scene() -> void:
 	var log_instance = log_scene.instantiate() as Node2D 
 	log_instance.global_position = global_position 
 	get_parent().add_child(log_instance) # enables the log to be dropped when tree's chopped
-
-
-#  btw if for some reason the tree chopping isn't working, make sure the small tree and player "HurtComponent"
-# is set to Tool: Axe Wood 

@@ -14,12 +14,12 @@ signal interactable_deactivated
 	#pass
 
 # these two allow for the player to walk *through* the door instead of colliding with it 
-func _on_body_entered(body):
-	interactable_activated.emit() 
-
-
-func _on_body_exited(body):
-	interactable_deactivated.emit() 
+#func _on_body_entered(body):
+	#interactable_activated.emit() 
+#
+#
+#func _on_body_exited(body):
+	#interactable_deactivated.emit() 
 
 
 # layer 1 = objects, layer 2 = player, layer 3 = interactables 
