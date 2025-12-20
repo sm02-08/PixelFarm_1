@@ -1,9 +1,22 @@
 class_name Player # the class name derives from characterbody2d
 extends CharacterBody2D
 
+@onready var hit_component = $HitComponent
+
 @export var current_tool : DataTypes.Tools = DataTypes.Tools.None # default it to none 
 
 var player_direction: Vector2 # player will now have variable player direction
+
+func _ready() -> void: 
+	ToolManager.tool_selected.connect(on_tool_selected) # signal from tools_panel and tools_manager
+	
+func on_tool_selected(tool: DataTypes.Tools) -> void: 
+	current_tool = tool # set current tool to the tool being passed into our method 
+	# make sure to update hit component too! 
+	hit_component.current_tool = tool 
+	# and also make sure that current tool for HitComponent is set to None so that 
+	# the default will always be that there's no tool 
+	print("Tool: ", tool)
 
 #const SPEED = 300.0
 #const JUMP_VELOCITY = -400.0
