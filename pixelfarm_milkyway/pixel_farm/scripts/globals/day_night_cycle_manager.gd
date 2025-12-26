@@ -6,9 +6,9 @@ const GAME_MINUTE_DURATION: float = TAU / MINUTES_PER_DAY # tau = 6.28!
 
 var game_speed: float = 5.0 
 
-var initial_day: int = 1 
-var initial_hour: int = 12 
-var initial_minute: int = 30 
+var initial_day: int = 0
+var initial_hour: int = 0 
+var initial_minute: int = 0 
 
 var time: float = 0.0 # time is the time duration from beginning 
 var current_minute: int = 0

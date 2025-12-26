@@ -14,6 +14,15 @@ var tomato_harvest_scene = preload("res://scenes/objects/plants/tomato_harvest.t
 
 
 var growth_state: DataTypes.GrowthStates = DataTypes.GrowthStates.Seed
+"""
+so if you look at the basic_plants.png tab, you'll see that the corn sprites are the first line
+and then the tomatoes are the second 
+so this means that if we put our growth state to start at 1 2 3 4 this will cause the tomato to grow
+into corn, which is obv not what we want tomatoes to grow into 
+
+so we have to offset the tomatoes slightly 
+"""
+var start_tomato_frame_offset: int = 6 
 
 func _ready() -> void: 
 	watering_particles.emitting = false 
@@ -28,7 +37,8 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void: 
 	growth_state = growth_cycle_component.get_current_growth_state() 
-	sprite_2d.frame = growth_state 
+	sprite_2d.frame = growth_state + start_tomato_frame_offset # this part is changed from corn.gd
+	# because we need to offset the tomato growth so that tomato seeds don't grow into corn
 	
 	if growth_state == DataTypes.GrowthStates.Maturity: 
 		flowering_particles.emitting = true 
