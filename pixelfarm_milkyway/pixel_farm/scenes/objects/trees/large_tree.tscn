@@ -32,6 +32,7 @@ script = ExtResource("2_cgy4a")
 position = Vector2(0, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_kehfd")
 
 [node name="HurtComponent" parent="." instance=ExtResource("2_qx7uw")]
