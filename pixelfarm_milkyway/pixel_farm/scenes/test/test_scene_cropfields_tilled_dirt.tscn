@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dgahh7n8o5la4"]
+[gd_scene load_steps=14 format=4 uid="uid://dgahh7n8o5la4"]
 
 [ext_resource type="PackedScene" uid="uid://ccet5knni8ogm" path="res://scenes/components/day_night_cycle_component.tscn" id="1_jo83y"]
 [ext_resource type="TileSet" uid="uid://choitg3fo6yi2" path="res://tilesets/game_tile_set.tres" id="2_4lqpu"]
@@ -8,10 +8,18 @@
 [ext_resource type="Script" path="res://scenes/components/field_cursor_component.gd" id="4_on4gm"]
 [ext_resource type="PackedScene" uid="uid://bv5dddeh5a01p" path="res://scenes/components/crops_cursor_component.tscn" id="5_qnxc7"]
 [ext_resource type="Script" path="res://scenes/components/crops_cursor_component.gd" id="6_axcly"]
+[ext_resource type="PackedScene" uid="uid://b18iymyrnm71c" path="res://scenes/components/save_data_component.tscn" id="6_w5a02"]
+[ext_resource type="Resource" uid="uid://kklqkuyq3bhp" path="res://resources/tilemap_layer_data_resource.tres" id="7_fpm5f"]
 [ext_resource type="PackedScene" uid="uid://b4pwkvuo2fcty" path="res://scenes/components/save_level_data_component.tscn" id="9_majbt"]
 [ext_resource type="Script" path="res://scenes/components/save_level_data_component.gd" id="10_ek45h"]
+[ext_resource type="PackedScene" uid="uid://dnoeiygvv6ii8" path="res://scenes/components/test_scene_save_data_manager_component.tscn" id="11_yooii"]
 
 [node name="TestSceneCropfieldsTilledDirt" type="Node2D"]
+
+[node name="TestSceneSaveDataManagerComponent" parent="." instance=ExtResource("11_yooii")]
+
+[node name="SaveLevelDataComponent" parent="." instance=ExtResource("9_majbt")]
+script = ExtResource("10_ek45h")
 
 [node name="DayNightCycleComponent" parent="." instance=ExtResource("1_jo83y")]
 visible = false
@@ -32,6 +40,9 @@ tile_set = ExtResource("2_4lqpu")
 [node name="TilledSoil" type="TileMapLayer" parent="GameTileMap"]
 tile_set = ExtResource("2_4lqpu")
 
+[node name="SaveDataComponent" parent="GameTileMap/TilledSoil" instance=ExtResource("6_w5a02")]
+save_data_resource = ExtResource("7_fpm5f")
+
 [node name="Cropfields" type="Node2D" parent="."]
 
 [node name="FieldCursorComponent" parent="." node_paths=PackedStringArray("grass_tilemap_layer", "tilled_soil_tilemap_layer") instance=ExtResource("3_gh8dp")]
@@ -49,6 +60,3 @@ position = Vector2(231, 190)
 current_tool = 2
 
 [node name="GameScreen" parent="." instance=ExtResource("4_nyoty")]
-
-[node name="SaveLevelDataComponent" parent="." instance=ExtResource("9_majbt")]
-script = ExtResource("10_ek45h")
