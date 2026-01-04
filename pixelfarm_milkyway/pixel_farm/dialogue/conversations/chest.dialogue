@@ -1,0 +1,25 @@
+~ start_cow_pasture_box
+# if you go to any scene that contains the chest node, you'll see a "Dialogue Start Command"
+# in the inspector tab for the node 
+# the start_cow_pasture_box is the "Dialogue Start Command", as is the start_chicken_pasture_box
+# this is the dialogue for cows, because it'll be diff from the chicken dialogue
+Pasture Box: [[Hi|Hello|Howdy|Hey partner]], your animals are hungry! 
+Pasture Box: Will you feed your cows? 
+- Yes 
+	Niklas: Alright, I'll feed my cows. 
+	# look at the guide.dialogue for reference
+	do GameDialogueManager.action_feed_animals() # you need an action after the agreement
+- No 
+	Niklas: I won't feed them. I have enough milk currently. 
+=> END
+
+~ start_chicken_pasture_box
+# this is the dialogue for chicken, diff from cows
+Pasture Box: [[Hi|Hello|Howdy|Hey partner]], your animals are hungry! 
+Pasture Box: Will you feed your chickens? 
+- Yes 
+	Niklas: Alright, I'll feed my chickens. 
+	do GameDialogueManager.action_feed_animals()
+- No 
+	Niklas: I won't feed them. I have enough eggs currently. 
+=> END
