@@ -57,6 +57,9 @@ shape = SubResource("CircleShape2D_vls4h")
 
 [node name="InteractableLabelComponent" parent="." instance=ExtResource("4_n4skp")]
 offset_left = -9.0
-offset_top = -36.0
+offset_top = -37.0
 offset_right = 9.0
-offset_bottom = -18.0
+offset_bottom = -19.0
+
+[connection signal="interactable_activated" from="InteractableComponent" to="InteractableComponent" method="_on_body_entered"]
+[connection signal="interactable_deactivated" from="InteractableComponent" to="InteractableComponent" method="_on_body_exited"]
