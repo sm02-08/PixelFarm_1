@@ -27,6 +27,8 @@ func _ready() -> void: # override the ready method
 	interactable_label_component.hide() # hide interactable label component when the scene loads up 
 	
 	GameDialogueManager.feed_the_animals.connect(on_feed_the_animals) # we need an action to come after you agree to feed the cows and chickens, and here, we connect that action through signals. the feed_the_animals function is down below
+	feed_component.food_received.connect(on_food_received) # connect the food received signal 
+	# scroll down to the on_food_received signal
 	
 func on_interactable_activated() -> void: 
 	# when players go into the interactable area, we want a label to show 
@@ -63,6 +65,8 @@ func _unhandled_input(event: InputEvent) -> void:
 func on_feed_the_animals() -> void: 
 	if in_range:
 		trigger_feed_harvest("corn", corn_harvest_scene)
+		# to solve the issue w/ adding tomatoes...
+		trigger_feed_harvest("tomato", tomato_harvest_scene) # just do this, obv
 		
 
 func trigger_feed_harvest(inventory_item: String, scene: Resource) -> void: # pass in the inventory_item adn scene 
@@ -92,3 +96,25 @@ func trigger_feed_harvest(inventory_item: String, scene: Resource) -> void: # pa
 		# these actions are called sequentially. 
 		
 		InventoryManager.remove_collectible(inventory_item)
+
+
+func on_food_received(area: Area2D) -> void: 
+	call_deferred("add_reward_scene") # we use call deferred to make sure the scene is added in the idle time 
+	
+func add_reward_scene() -> void: 
+	for scene in output_reward_scenes: 
+		var reward_scene: Node2D = scene.instantiate()  # reward_scene is a node 2d 
+		# now, calculate the random position for the award with get_random_circle_position
+		var reward_position: Vector2 = get_random_circle_position(reward_marker.global_position, reward_output_radius) # grab the reward marker's global position, pass in the reward output radius
+		reward_scene.global_position = reward_position # the global position = reward position
+		get_tree().root.add_child(reward_scene) 
+		
+func get_random_circle_position(center: Vector2, radius: int) -> Vector2i: # pass in centerpoint and radius for circle
+	var angle = randf() * TAU # tau = 2 * pi
+	var distance_from_center = sqrt(randf()) * radius 
+	
+	var x: int = center.x + distance_from_center * cos(angle) # get the x-value of the center point, add random distance from the center which is just calculated, * the cos of the angle 
+	var y: int = center.y + distance_from_center * cos(angle)
+	
+	return Vector2i(x, y) 
+	

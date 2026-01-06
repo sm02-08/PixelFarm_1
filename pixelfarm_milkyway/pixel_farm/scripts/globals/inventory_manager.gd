@@ -15,7 +15,7 @@ func add_collectible(collectible_name: String) -> void: # adding the collectible
 		
 	inventory_changed.emit()
 
-func remove_collectibles(collectible_name: String) -> void: 
+func remove_collectible(collectible_name: String) -> void: 
 	if inventory[collectible_name] == null: # copy pasted from just above 
 		inventory[collectible_name] = 0 # changed from 1 to 0
 		
