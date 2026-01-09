@@ -5,9 +5,11 @@ extends Node
 # of type tilemaplayer 
 @export var tilled_soil_tilemap_layer: TileMapLayer 
 @export var terrain_set: int = 0 
-@export var terrain: int = 1 
+@export var terrain: int = 3 
 
-@onready var player: Player = get_tree().get_first_node_in_group("player")
+#var player: Player = get_tree().get_first_node_in_group("player") # when running a test on the main screen, an error occurred where "cannot call method 'get_first_node_in_group' on a null value." therefore, fix this with a _ready method
+# this has been changed
+var player: Player
 # to do this, go to the player scene, go to "Node" and "Groups" and create a new global group
 # that's called 'player' 
 
@@ -16,6 +18,11 @@ var cell_position: Vector2i # vector2i is not a typo
 var cell_source_id: int 
 var local_cell_position: Vector2 
 var distance: float 
+
+func _ready() -> void: 
+	await get_tree().process_frame # after the tree has been set up and the framework has been added...
+	# grab the player from the first noded group 
+	player = get_tree().get_first_node_in_group("player")
 
 func _unhandled_input(event: InputEvent) -> void: 
 	if event.is_action_pressed("remove_dirt"): 

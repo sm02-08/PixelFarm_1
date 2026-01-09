@@ -104,7 +104,7 @@ load_path = "res://.godot/imported/basic_ui_sprites.png-f1365ff47f1f008f610f3c55
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kt512"]
 atlas = SubResource("CompressedTexture2D_rpgxb")
-region = Rect2(11, 107, 26, 28)
+region = Rect2(11, 11, 26, 28)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ngisn"]
 texture = SubResource("AtlasTexture_kt512")
@@ -264,6 +264,7 @@ DayNightLabel/base_type = &"Label"
 DayNightLabel/font_sizes/font_size = 18
 DayNightLabel/fonts/font = ExtResource("2_uvkg5")
 GameMenuButton/base_type = &"Button"
+GameMenuButton/colors/font_disabled_color = Color(0.366595, 0.366595, 0.366595, 1)
 GameMenuButton/font_sizes/font_size = 18
 GameMenuButton/fonts/font = ExtResource("2_uvkg5")
 GameMenuButton/styles/disabled = SubResource("StyleBoxTexture_ngisn")

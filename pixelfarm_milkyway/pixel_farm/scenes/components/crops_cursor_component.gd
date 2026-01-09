@@ -15,6 +15,12 @@ var local_cell_position: Vector2
 var distance: float 
 # used these ^ same variables in field cursor component 
 
+func _ready() -> void: 
+	await get_tree().process_frame # after the tree has been set up and the framework has been added...
+	# grab the player from the first noded group 
+	player = get_tree().get_first_node_in_group("player")
+
+
 # unhandled_input and get_cell_under_mouse are copied from fieldcursorcomponent 
 func _unhandled_input(event: InputEvent) -> void: 
 	if event.is_action_pressed("remove_dirt"): 

@@ -1,11 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://iuhyo1f1t4se"]
+[gd_scene load_steps=6 format=3 uid="uid://iuhyo1f1t4se"]
 
 [ext_resource type="Script" path="res://scenes/ui/game_menu_screen.gd" id="1_i05sj"]
 [ext_resource type="Theme" uid="uid://j1tmgy7rj3kv" path="res://scenes/ui/game_ui_theme.tres" id="1_pfimf"]
 [ext_resource type="PackedScene" uid="uid://obcrey4h8dwf" path="res://scenes/ui/game_menu_screen_background.tscn" id="1_pvjh8"]
+[ext_resource type="PackedScene" uid="uid://bsvfdv7ddo0id" path="res://scenes/components/mouse_cursor_component.tscn" id="2_b1q6k"]
+[ext_resource type="Texture2D" uid="uid://dhgxn5kd0hei1" path="res://assets/ui/mouse_icon.png" id="3_02awy"]
 
 [node name="GameMenuScreen" type="CanvasLayer"]
 script = ExtResource("1_i05sj")
+
+[node name="MouseCursorComponent" parent="." instance=ExtResource("2_b1q6k")]
+cursor_component_texture = ExtResource("3_02awy")
 
 [node name="GameMenuScreenBackground" parent="." instance=ExtResource("1_pvjh8")]
 

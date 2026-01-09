@@ -3,6 +3,8 @@
 
 extends Node
 
+var allow_save_game: bool # allows for editing: do you want the game to be able to be saved when you first load it? this is used in tandem with game_manager.gd's start_game() function 
+
 func _unhandled_input(event: InputEvent) -> void: # this is the input map
 	if event.is_action_pressed("save_game"):
 		save_game() # when the same_game access is pressed, we go into the function save_game()
@@ -17,6 +19,8 @@ func save_game() -> void:
 		# now go to save_leveL_data_component.gd for further explanations of the code 
 
 func load_game() -> void: 
+	await get_tree().process_frame # this will wait for the save tree to be created and then we load the data and reattach the tiles (e.g. after tilling) and load the crop scene 
+	
 	# copy everything from save_game() 
 	var save_level_data_component: SaveLevelDataComponent = get_tree().get_first_node_in_group("save_level_data_component")
 	

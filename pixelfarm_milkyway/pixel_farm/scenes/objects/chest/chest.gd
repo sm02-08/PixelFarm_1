@@ -57,7 +57,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			
 			# need dialogue to be created
 			var balloon: BaseGameDialogueBalloon = balloon_scene.instantiate() 
-			get_tree().current_scene.add_child(balloon) # get the tree of the current scene, add child, and pass in the balloon instance
+			get_tree().root.add_child(balloon) # get the tree of the current scene, add child, and pass in the balloon instance
 			
 			balloon.start(load("res://dialogue/conversations/chest.dialogue"), dialogue_start_command) # load some dialogue script, and then pass in the parameter dialogue_start_command() which was already declared in line 9
 			# we want to create diff dialogue scripts for cows and chickens

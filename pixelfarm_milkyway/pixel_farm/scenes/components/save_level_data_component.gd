@@ -9,6 +9,8 @@ var save_game_data_path: String = "user://game_data/" # we're using the user pat
 var save_file_name: String = "save_%s_game_data.tres" # there's a format operator in here
 var game_data_resource: SaveGameDataResource 
 
+# for ease of searching when i inevitably ctrl+f this part later, i'll spam some keywords: win+r win + r windows + r window + r wins + r wins+r app_userdata AppData 
+
 # and when testing, make sure to go to C:\Users\shell\AppData\Roaming\Godot\app_userdata\pixel_farm\game_data and delete the .tres file. deleting it will allow the game to start fresh, while not deleting it saves your farming progress 
 
 # Called when the node enters the scene tree for the first time.
