@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://c24acupqc3nxr"]
 
-[ext_resource type="Texture2D" uid="uid://clxoydc1gottw" path="res://assets/game/Objects/basic_grass_biome.png" id="1_mpvlp"]
+[ext_resource type="Texture2D" uid="uid://bldr0teccdl4a" path="res://assets/game/Objects/grassbiomedrawing2.png" id="1_5xwv4"]
 [ext_resource type="PackedScene" uid="uid://bfa2totsyqbb0" path="res://scenes/components/collectible_component.tscn" id="2_i6b6n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x8bpu"]
-atlas = ExtResource("1_mpvlp")
+atlas = ExtResource("1_5xwv4")
 region = Rect2(114, 18, 10, 8)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ruec8"]

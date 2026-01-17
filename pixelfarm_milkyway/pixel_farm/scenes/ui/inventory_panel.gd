@@ -1,11 +1,11 @@
 extends PanelContainer
 
-@onready var log_label = $MarginContainer/VBoxContainer/Logs/LogLabel
-@onready var stone_label = $MarginContainer/VBoxContainer/Stone/StoneLabel
-@onready var corn_label = $MarginContainer/VBoxContainer/Corn/CornLabel
-@onready var tomato_label = $MarginContainer/VBoxContainer/Tomato/TomatoLabel
-@onready var egg_label = $MarginContainer/VBoxContainer/Egg/EggLabel
-@onready var milk_label = $MarginContainer/VBoxContainer/Milk/MilkLabel
+@onready var log_label: Label = $MarginContainer/VBoxContainer/Logs/LogLabel
+@onready var stone_label: Label = $MarginContainer/VBoxContainer/Stone/StoneLabel
+@onready var corn_label: Label = $MarginContainer/VBoxContainer/Corn/CornLabel
+@onready var tomato_label: Label = $MarginContainer/VBoxContainer/Tomato/TomatoLabel
+@onready var egg_label: Label = $MarginContainer/VBoxContainer/Egg/EggLabel
+@onready var milk_label: Label = $MarginContainer/VBoxContainer/Milk/MilkLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

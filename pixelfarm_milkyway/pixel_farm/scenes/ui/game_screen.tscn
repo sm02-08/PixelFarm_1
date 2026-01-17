@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2a8s0n7ffrm2"]
+[gd_scene load_steps=7 format=3 uid="uid://b2a8s0n7ffrm2"]
 
 [ext_resource type="Theme" uid="uid://j1tmgy7rj3kv" path="res://scenes/ui/game_ui_theme.tres" id="1_8a3g5"]
 [ext_resource type="PackedScene" uid="uid://bi2fcusk2frs1" path="res://scenes/ui/emotes_panel.tscn" id="2_dejl6"]
 [ext_resource type="PackedScene" uid="uid://d1vu2im3pgkeg" path="res://scenes/ui/tools_panel.tscn" id="2_dvy4o"]
 [ext_resource type="PackedScene" uid="uid://bp8sdnpr3126w" path="res://scenes/ui/inventory_panel.tscn" id="3_wpe1o"]
 [ext_resource type="PackedScene" uid="uid://biq43erir450q" path="res://scenes/ui/day_night_panel.tscn" id="4_vcvvk"]
+[ext_resource type="PackedScene" uid="uid://cp6pxsm7s2p5i" path="res://scenes/ui/githubbutton2.tscn" id="6_k4jtv"]
 
 [node name="GameScreen" type="CanvasLayer"]
 
@@ -39,3 +40,6 @@ size_flags_vertical = 8
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
+
+[node name="Control" parent="MarginContainer" instance=ExtResource("6_k4jtv")]
+layout_mode = 2

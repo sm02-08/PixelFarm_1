@@ -59,6 +59,9 @@ func get_cell_under_mouse() -> void:
 
 func add_crop() -> void: 
 	if distance < 20.0: 
+		if has_crop_in_dirt(): # check: if there's already crops in that area, then don't plant anything
+			return 
+		
 		if ToolManager.selected_tool == DataTypes.Tools.PlantCorn: # check if the current tool is the plantcorn tool 
 			var corn_instance = corn_plant_scene.instantiate() as Node2D 
 			# instantiate an instance of the corn scene
@@ -79,6 +82,16 @@ func remove_crop() -> void:
 			if node.global_position == local_cell_position: 
 				node.queue_free() 
 			
+
+func has_crop_in_dirt() -> bool: 
+	var cropfields = get_parent().find_child("Cropfields")
+	if cropfields == null: # identify if there's planted crops already
+		return false 
+		
+	for node: Node2D in cropfields.get_children(): 
+		if node.global_position == local_cell_position: # if there's a crop already in the tilled dirt area before we plant a new one, adding another plant in there should not be possible. we want only one plant per tilled dirt square 
+			return true 
+	return false 
 
 
 ## Called when the node enters the scene tree for the first time.

@@ -1,9 +1,9 @@
 class_name Player # the class name derives from characterbody2d
 extends CharacterBody2D
 
-@onready var hit_component = $HitComponent
+@onready var hit_component: HitComponent = $HitComponent
 
-@export var current_tool : DataTypes.Tools = DataTypes.Tools.None # default it to none 
+@export var current_tool: DataTypes.Tools = DataTypes.Tools.None # default it to none 
 
 var player_direction: Vector2 # player will now have variable player direction
 

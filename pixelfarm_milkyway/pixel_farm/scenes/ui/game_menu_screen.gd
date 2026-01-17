@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var save_game_button: Button = $MarginContainer/VBoxContainer/SaveGameButton 
+signal finished 
 
 func _ready() -> void: 
 	save_game_button.disabled = !SaveGameManager.allow_save_game  
@@ -11,6 +12,7 @@ func _ready() -> void:
 func _on_start_game_button_pressed():
 	GameManager.start_game() # when we start the game, we need to queue_free() the game menu screen
 	# press start, load the main scene, load level 1, and come out of there (still with the game screen) and queue free that 
+	emit_signal("finished")
 	queue_free()
 
 

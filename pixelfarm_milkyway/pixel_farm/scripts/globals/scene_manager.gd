@@ -5,9 +5,11 @@ extends Node
 var main_scene_path: String = "res://scenes/main_scene.tscn"
 var main_scene_root_path: String = "/root/MainScene"
 var main_scene_level_root_path: String = "/root/MainScene/GameRoot/LevelRoot"
+var current_level: String = "" # know what level you're always on 
 
 var level_scenes: Dictionary = {
-	"Level1": "res://scenes/levels/level_1.tscn"
+	"Level1": "res://scenes/levels/level_1.tscn",
+	"Level2": "res://scenes/levels/level_2.tscn" 
 }
 
 func load_main_scene_container() -> void: 
@@ -20,6 +22,8 @@ func load_main_scene_container() -> void:
 		get_tree().root.add_child(node) # pass in the node in the child 
 		
 func load_level(level: String) -> void: # we need a function to load levels; pass in the level (a type string); return type is void
+	current_level = level 
+	
 	var scene_path: String = level_scenes.get(level)
 	
 	if scene_path == null: 
@@ -38,3 +42,8 @@ func load_level(level: String) -> void: # we need a function to load levels; pas
 		await get_tree().process_frame
 		
 		level_root.add_child(level_scene)
+
+func is_on_level(level_name: String) -> bool: 
+	return current_level == level_name 
+	
+	

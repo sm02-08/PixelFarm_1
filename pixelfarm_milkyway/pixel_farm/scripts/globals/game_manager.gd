@@ -24,3 +24,9 @@ func show_game_menu_screen() -> void:
 	get_tree().root.add_child(game_menu_screen_instance)
 
 # this method allows you to add any levels to the scene and then test it out 
+
+#func _setup_level() -> void: 
+	#var exit = $NextLevel.get_node_or_null("NextLevel")
+
+#func _load_level() -> void: 
+	#pass 

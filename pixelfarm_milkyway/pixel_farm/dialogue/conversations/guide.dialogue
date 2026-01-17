@@ -6,11 +6,13 @@ Niklas: [[Hi|Hello|Howdy|Hey partner]], nice to meet you.
 Niklas: Welcome to your new farm! Your cows and chickens are hungry--you need to feed them!
 Niklas: I've got just the thing. Here, take some seeds. 
 Niklas: You'll have to plant them to grow crops, and you'll be able to feed the crops to your livestock.
+Niklas: Use the tilling tool to create tilled land, plant your seeds, and use the watering can to water them.
+Niklas: Press RMB (right mouse button) to disable your tools. 
 - Take crop seeds
 	You: Thanks for the seeds! 
 	do GameDialogueManager.action_give_crop_seeds() # this calls the method on game_dialogue_manager.gd
 	# the action_give_crop_seeds() method. only if the player chooses the "take crop seeds" option
 - No, I don't want them.
 	You: I'm not ready to grow my farm yet, but thank you for the information! 
-
+- I'd like to hear this information again. => start 
 => END 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://b1tsv45f3mg6y"]
 
-[ext_resource type="Texture2D" uid="uid://clxoydc1gottw" path="res://assets/game/Objects/basic_grass_biome.png" id="1_amyqx"]
 [ext_resource type="Shader" path="res://scenes/objects/shake.gdshader" id="1_wh63d"]
+[ext_resource type="Texture2D" uid="uid://bldr0teccdl4a" path="res://assets/game/Objects/grassbiomedrawing2.png" id="2_01eku"]
 [ext_resource type="Script" path="res://scenes/objects/trees/large_tree.gd" id="2_cgy4a"]
 [ext_resource type="PackedScene" uid="uid://dnm1qilvpevm3" path="res://scenes/components/hurt_component.tscn" id="2_qx7uw"]
 [ext_resource type="PackedScene" uid="uid://dng48eujvl4ob" path="res://scenes/components/damage_component.tscn" id="3_hahsf"]
@@ -13,7 +13,7 @@ shader_parameter/shake_intensity = 0.0
 shader_parameter/shake_speed = 20.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cpxv7"]
-atlas = ExtResource("1_amyqx")
+atlas = ExtResource("2_01eku")
 region = Rect2(16, 0, 32, 32)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kehfd"]

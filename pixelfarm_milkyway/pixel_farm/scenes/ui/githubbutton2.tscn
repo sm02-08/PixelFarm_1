@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp6pxsm7s2p5i"]
+
+[ext_resource type="Texture2D" uid="uid://b1rgy5765f54o" path="res://assets/ui/github_16bit.png" id="1_mcti2"]
+[ext_resource type="Script" path="res://scenes/ui/githubbutton2.gd" id="2_cv51q"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GitHubButton" type="Button" parent="."]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -26.0
+offset_top = -26.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_type_variation = &"FlatButton"
+icon = ExtResource("1_mcti2")
+icon_alignment = 1
+script = ExtResource("2_cv51q")
+link = "https://github.com/sm02-08/PixelFarm_1"
+
+[connection signal="pressed" from="GitHubButton" to="GitHubButton" method="press_button"]

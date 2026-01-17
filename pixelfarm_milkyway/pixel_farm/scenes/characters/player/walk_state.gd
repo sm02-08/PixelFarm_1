@@ -7,10 +7,11 @@ extends NodeState
 func _on_process(_delta : float) -> void:
 	pass
 
+@onready var tilemap = $GameTileMap/Water 
 
 func _on_physics_process(_delta : float) -> void:
 	var direction: Vector2 = GameInputEvents.movement_input() 
-	
+		
 	if direction == Vector2.UP: 
 		animated_sprite_2d.play("walk_back")
 	elif direction == Vector2.RIGHT: 

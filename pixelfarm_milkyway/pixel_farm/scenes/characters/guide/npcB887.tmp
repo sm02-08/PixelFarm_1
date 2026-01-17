@@ -1,0 +1,124 @@
+[gd_scene load_steps=16 format=3 uid="uid://beypftu2pd4xm"]
+
+[ext_resource type="Script" path="res://scenes/characters/guide/npc_3.gd" id="1_h7yy6"]
+[ext_resource type="Shader" path="res://scenes/characters/guide/replace_color.gdshader" id="2_i2v5b"]
+[ext_resource type="Texture2D" uid="uid://cqvxutb5x7rhh" path="res://assets/game/Characters/char_spritesheet_draw2.png" id="3_enl4d"]
+[ext_resource type="PackedScene" uid="uid://qupq4ejie0ap" path="res://scenes/components/interactable_component.tscn" id="4_7hu42"]
+[ext_resource type="PackedScene" uid="uid://de8xhhprm5xgw" path="res://scenes/components/interactable_label_component.tscn" id="5_ma6iu"]
+[ext_resource type="Texture2D" uid="uid://buh7ckfy0bmud" path="res://assets/ui/basic_ui_sprites.png" id="6_mlokn"]
+[ext_resource type="FontVariation" uid="uid://bv22vkx7524qn" path="res://assets/ui/fonts/zx_palm_variation.tres" id="7_r02jx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1wp8x"]
+shader = ExtResource("2_i2v5b")
+shader_parameter/original_0 = Color(0.780392, 0.552941, 0.717647, 1)
+shader_parameter/original_1 = Color(0.870588, 0.698039, 0.823529, 1)
+shader_parameter/original_2 = Color(0.560784, 0.196078, 0.462745, 1)
+shader_parameter/original_3 = Color(0.74902, 0.505882, 0.407843, 1)
+shader_parameter/original_4 = Color(0.737255, 0.27451, 0.611765, 1)
+shader_parameter/replace_0 = Color(0.420366, 0.641841, 0.623548, 1)
+shader_parameter/replace_1 = Color(0.553667, 0.810224, 0.658087, 1)
+shader_parameter/replace_2 = Color(0.226915, 0.271775, 0.57287, 1)
+shader_parameter/replace_3 = Color(0.313423, 0.564063, 0.36387, 1)
+shader_parameter/replace_4 = Color(0.553575, 0.811758, 0.905736, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m10lm"]
+atlas = ExtResource("3_enl4d")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfomh"]
+atlas = ExtResource("3_enl4d")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ectjs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m10lm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfomh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vls4h"]
+radius = 33.0606
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ju8ue"]
+shader = ExtResource("2_i2v5b")
+shader_parameter/original_0 = Color(0.713726, 0.537255, 0.384314, 1)
+shader_parameter/original_1 = Color(0.768627, 0.603922, 0.423529, 1)
+shader_parameter/original_2 = null
+shader_parameter/original_3 = null
+shader_parameter/original_4 = null
+shader_parameter/replace_0 = Color(0.353841, 0.760798, 0.778998, 1)
+shader_parameter/replace_1 = Color(0.373001, 0.532438, 0.75235, 1)
+shader_parameter/replace_2 = null
+shader_parameter/replace_3 = null
+shader_parameter/replace_4 = null
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lkdpg"]
+shader = ExtResource("2_i2v5b")
+shader_parameter/original_0 = Color(0.768627, 0.603922, 0.423529, 1)
+shader_parameter/original_1 = Color(0.862745, 0.72549, 0.541176, 1)
+shader_parameter/original_2 = Color(0.666667, 0.47451, 0.34902, 1)
+shader_parameter/original_3 = Color(0.564706, 0.384314, 0.364706, 1)
+shader_parameter/original_4 = Color(0.419608, 0.294118, 0.356863, 1)
+shader_parameter/replace_0 = Color(0.416844, 0.71124, 0.807061, 1)
+shader_parameter/replace_1 = Color(0.343754, 0.602757, 0.785098, 1)
+shader_parameter/replace_2 = Color(0.465147, 0.405238, 0.930846, 1)
+shader_parameter/replace_3 = Color(0.40216, 0.461527, 0.907145, 1)
+shader_parameter/replace_4 = Color(0.782307, 0.407649, 0.43752, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwurm"]
+atlas = ExtResource("6_mlokn")
+region = Rect2(375, 72, 18, 17)
+
+[node name="NPC_3" type="Node2D"]
+script = ExtResource("1_h7yy6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_1wp8x")
+position = Vector2(0, -8)
+scale = Vector2(0.314, 0.314)
+sprite_frames = SubResource("SpriteFrames_ectjs")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.0845394
+
+[node name="InteractableComponent" parent="." instance=ExtResource("4_7hu42")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+visible = false
+position = Vector2(-1, -8)
+shape = SubResource("CircleShape2D_vls4h")
+
+[node name="InteractableLabelComponent" parent="." instance=ExtResource("5_ma6iu")]
+material = SubResource("ShaderMaterial_ju8ue")
+offset_left = -13.0
+offset_top = -35.0
+offset_right = 5.0
+offset_bottom = -17.0
+
+[node name="TextureRect2" type="TextureRect" parent="InteractableLabelComponent"]
+material = SubResource("ShaderMaterial_lkdpg")
+layout_mode = 0
+offset_right = 18.0
+offset_bottom = 17.0
+texture = SubResource("AtlasTexture_dwurm")
+
+[node name="Label2" type="Label" parent="InteractableLabelComponent"]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 18.0
+offset_bottom = 14.0
+theme_override_fonts/font = ExtResource("7_r02jx")
+theme_override_font_sizes/font_size = 8
+text = "E"
+horizontal_alignment = 1
+
+[connection signal="inventory_check_passed" from="." to="." method="_on_inventory_check_passed"]
+[connection signal="interactable_activated" from="InteractableComponent" to="InteractableComponent" method="_on_body_entered"]
+[connection signal="interactable_deactivated" from="InteractableComponent" to="InteractableComponent" method="_on_body_exited"]

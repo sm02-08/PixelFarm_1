@@ -1,0 +1,24 @@
+~ start
+Nicole: [[Hi|Hello|Howdy|Hey partner|Hoot hoot]], nice to meet you. 
+# use hashtags to comment 
+# the hi|hello|howdy means that every time, one of the three options will be 
+# chosen so the dialogue doesn't get repetitive
+Nicole: I'm Nicole. I'll be a guide for everything you might want to know.
+Nicole: You can cut down trees: 3 hits for a small tree, 5 hits for a large tree.
+Nicole: You can also pick at rocks -- I'll let you test out how many times you'll need to hit them!
+Nicole: When you've harvested your plants, go to the chests to feed your cows or your chickens.
+Nicole: Press "P" to save your progress!
+Nicole: Explore some of the houses on this property. Housing prices are high in this economy, so take advantage of this grace we're providing!
+if SceneManager.is_on_level("Level1")
+	Nicole: When you've collected 20 corn and 20 tomatoes, come back to me and you can advance to Level 2.
+	- I have 20 corn and 20 tomatoes.
+		You: I've fulfilled the requirements. May I advance to Level 2? 
+		#do GameDialogueManager.check_inventory()
+		if GameDialogueManager.check_inventory() 
+			Nicole: You have enough to advance to the next level! Step through the portal and you'll be transported to level 2. Congratulations!
+		else 
+			Nicole: You haven't fulfilled the requirements. You cannot advance to Level 2, unfortunately.
+	- Alright, see you later! 
+if SceneManager.is_on_level("Level2")
+	Nicole: You've passed the basics! You can free roam now; have fun farming! 
+=> END

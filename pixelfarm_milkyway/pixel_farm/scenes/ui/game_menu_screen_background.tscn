@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://e7uo7ctorsvj" path="res://scenes/characters/guide/guide.tscn" id="4_i8u3g"]
 [ext_resource type="PackedScene" uid="uid://cyd07sdd712da" path="res://scenes/characters/cow/cow.tscn" id="5_q01t5"]
 [ext_resource type="PackedScene" uid="uid://beaot5epqfehn" path="res://scenes/characters/chicken/chicken.tscn" id="6_e2c32"]
-[ext_resource type="Texture2D" uid="uid://bgcjf86fb2jwn" path="res://assets/hoothaven2.png" id="7_bfoj8"]
+[ext_resource type="Texture2D" uid="uid://ch6nlgp4s3aoq" path="res://assets/hoothaven3.png" id="7_mdj7r"]
 
 [node name="GameMenuScreenBackground" type="Node2D"]
 y_sort_enabled = true
@@ -110,7 +110,7 @@ position = Vector2(208, 297)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(320, 202)
 scale = Vector2(1.3375, 1.27222)
-texture = ExtResource("7_bfoj8")
+texture = ExtResource("7_mdj7r")
 
 [editable path="Cow"]
 [editable path="Cow4"]

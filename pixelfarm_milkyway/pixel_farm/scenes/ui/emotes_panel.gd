@@ -24,8 +24,10 @@ func _on_emote_idle_timer_timeout() -> void:
 	animated_sprite_2d.play(emote) 
 
 func on_inventory_changed() -> void: 
-	animated_sprite_2d.play("emote_7_excited") # when your inventory changes (e.g. collect corn/tomato), play this emote to differentiate from normal situations 
+	pass
+	#animated_sprite_2d.play("emote_7_excited") # when your inventory changes (e.g. collect corn/tomato), play this emote to differentiate from normal situations 
 	
 func on_feed_the_animals() -> void: 
-	animated_sprite_2d.play("emote_6_love_kiss") # when you feed your animals by going to the chest and depositing your corn/tomato, play the love kiss emote 
+	pass 
+	#animated_sprite_2d.play("emote_6_love_kiss") # when you feed your animals by going to the chest and depositing your corn/tomato, play the love kiss emote 
 	

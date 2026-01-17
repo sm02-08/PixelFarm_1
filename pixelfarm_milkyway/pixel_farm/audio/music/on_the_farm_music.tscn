@@ -1,7 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://bv72hly84icmc"]
 
-[ext_resource type="AudioStream" uid="uid://ctpbegnqxdhs6" path="res://assets/audio/music/on_the_farm.ogg" id="1_8q7ds"]
+[ext_resource type="AudioStream" uid="uid://duvdawaleia7t" path="res://assets/audio/music/cobblestone_village2.ogg" id="1_suot6"]
 
 [node name="OnTheFarmMusic" type="AudioStreamPlayer2D"]
-stream = ExtResource("1_8q7ds")
+stream = ExtResource("1_suot6")
+autoplay = true
 bus = &"Music"
+parameters/looping = true
