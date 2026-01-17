@@ -1,11 +1,11 @@
 class_name FieldCursorComponent
 extends Node
 
-@export  var grass_tilemap_layer: TileMapLayer # add a variable that appears in the "Inspector" tab
+@export var grass_tilemap_layer: TileMapLayer # add a variable that appears in the "Inspector" tab
 # of type tilemaplayer 
 @export var tilled_soil_tilemap_layer: TileMapLayer 
-@export var terrain_set: int = 0 
-@export var terrain: int = 3 
+@export var terrain_set: int = 0 # default value of 0 
+@export var terrain: int = 3 # default value of 3 
 
 #var player: Player = get_tree().get_first_node_in_group("player") # when running a test on the main screen, an error occurred where "cannot call method 'get_first_node_in_group' on a null value." therefore, fix this with a _ready method
 # this has been changed

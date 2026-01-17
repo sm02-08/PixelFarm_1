@@ -2,17 +2,17 @@
 
 [ext_resource type="Theme" uid="uid://j1tmgy7rj3kv" path="res://scenes/ui/game_ui_theme.tres" id="1_l4b8e"]
 [ext_resource type="Script" path="res://scenes/ui/inventory_panel.gd" id="2_3m3u0"]
-[ext_resource type="Texture2D" uid="uid://d036wbpqoon8b" path="res://assets/game/Objects/basic_tools_and_materials.png" id="2_itgyh"]
 [ext_resource type="Texture2D" uid="uid://vsp2pn7uc8gw" path="res://assets/game/Objects/basic_plants.png" id="3_f310e"]
+[ext_resource type="Texture2D" uid="uid://js3jhni3cuh4" path="res://assets/game/Objects/basictoolsdraw.png" id="3_j87v7"]
 [ext_resource type="Texture2D" uid="uid://b2ggbx4wprl6d" path="res://assets/game/Objects/egg_item.png" id="4_17cdq"]
 [ext_resource type="Texture2D" uid="uid://bee6e7g1yj8hb" path="res://assets/game/Objects/simple_milk_and_grass_item.png" id="5_oqjtx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vhcl6"]
-atlas = ExtResource("2_itgyh")
+atlas = ExtResource("3_j87v7")
 region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ggcw1"]
-atlas = ExtResource("2_itgyh")
+atlas = ExtResource("3_j87v7")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_foucc"]

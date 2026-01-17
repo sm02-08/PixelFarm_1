@@ -18,6 +18,9 @@ func on_tool_selected(tool: DataTypes.Tools) -> void:
 	# the default will always be that there's no tool 
 	print("Tool: ", tool)
 
+#func _physics_process(_delta: float) -> void: #sm1.17.2026 
+	#move_and_slide()
+
 #const SPEED = 300.0
 #const JUMP_VELOCITY = -400.0
 #

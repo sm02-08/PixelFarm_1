@@ -35,11 +35,12 @@ size_flags_vertical = 4
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+mouse_filter = 2
 
 [node name="DayNightPanel" parent="MarginContainer" instance=ExtResource("4_vcvvk")]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 
-[node name="Control" parent="MarginContainer" instance=ExtResource("6_k4jtv")]
+[node name="GitHub" parent="MarginContainer" instance=ExtResource("6_k4jtv")]
 layout_mode = 2

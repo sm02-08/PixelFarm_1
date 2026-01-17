@@ -3,13 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://b1rgy5765f54o" path="res://assets/ui/github_16bit.png" id="1_mcti2"]
 [ext_resource type="Script" path="res://scenes/ui/githubbutton2.gd" id="2_cv51q"]
 
-[node name="Control" type="Control"]
+[node name="GitHubControl" type="Control"]
 layout_mode = 3
-anchors_preset = 15
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
 
 [node name="GitHubButton" type="Button" parent="."]
 custom_minimum_size = Vector2(26, 26)

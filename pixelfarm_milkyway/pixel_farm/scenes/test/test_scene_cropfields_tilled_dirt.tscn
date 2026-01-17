@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dgahh7n8o5la4"]
+[gd_scene load_steps=13 format=4 uid="uid://dgahh7n8o5la4"]
 
 [ext_resource type="PackedScene" uid="uid://ccet5knni8ogm" path="res://scenes/components/day_night_cycle_component.tscn" id="1_jo83y"]
 [ext_resource type="TileSet" uid="uid://choitg3fo6yi2" path="res://tilesets/game_tile_set.tres" id="2_4lqpu"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://b2a8s0n7ffrm2" path="res://scenes/ui/game_screen.tscn" id="4_nyoty"]
 [ext_resource type="Script" path="res://scenes/components/field_cursor_component.gd" id="4_on4gm"]
 [ext_resource type="PackedScene" uid="uid://bv5dddeh5a01p" path="res://scenes/components/crops_cursor_component.tscn" id="5_qnxc7"]
-[ext_resource type="Script" path="res://scenes/components/crops_cursor_component.gd" id="6_axcly"]
 [ext_resource type="PackedScene" uid="uid://b18iymyrnm71c" path="res://scenes/components/save_data_component.tscn" id="6_w5a02"]
 [ext_resource type="Resource" uid="uid://kklqkuyq3bhp" path="res://resources/tilemap_layer_data_resource.tres" id="7_fpm5f"]
 [ext_resource type="PackedScene" uid="uid://b4pwkvuo2fcty" path="res://scenes/components/save_level_data_component.tscn" id="9_majbt"]
@@ -52,7 +51,6 @@ grass_tilemap_layer = NodePath("../GameTileMap/Grass")
 tilled_soil_tilemap_layer = NodePath("../GameTileMap/TilledSoil")
 
 [node name="CropsCursorComponent" parent="." node_paths=PackedStringArray("tilled_soil_tilemap_layer") instance=ExtResource("5_qnxc7")]
-script = ExtResource("6_axcly")
 tilled_soil_tilemap_layer = NodePath("../GameTileMap/TilledSoil")
 
 [node name="Player" parent="." instance=ExtResource("3_0iuvm")]
